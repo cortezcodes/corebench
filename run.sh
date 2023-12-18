@@ -39,7 +39,7 @@ if [[ "$corebench" == "corebench" ]]; then
   echo "Now use VNCViewer to access $(boot2docker ip):5900 (password: $(cat password.txt))"
 elif [[ "$corebench" == "corebenchx" ]]; then
   printf "Container (coreutils): "
-  docker run -dt --name corebenchx0 -v $(pwd):/shared -p 5901:5900 --dns 8.8.8.8 --dns 8.8.4.4 mboehme/corebenchx | cut -c-12
+  docker run -dt --name corebenchx1 -v $(pwd):/shared -p 5901:5900 --dns 8.8.8.8 --dns 8.8.4.4 mboehme/corebenchx | cut -c-12
   echo "Now use VNCViewer to access $(boot2docker ip):5901 (password: $(cat password.txt))"
 else
   echo "Unknown: $corebench. Please use 'corebench' or 'corebenchx'."
